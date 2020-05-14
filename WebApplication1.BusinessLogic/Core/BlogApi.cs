@@ -79,6 +79,7 @@ namespace WebApplication1.BusinessLogic
             return false;
         }
 
+
         internal bool EditPost(PostEntity post)
         {
             var result = PostExistById(post.PostId);

@@ -10,4 +10,5 @@ namespace WebApplication1.Domain.Enums
         Moderator,
         Administrator
     }
+
 }

@@ -11,4 +11,5 @@ namespace WebApplication1.Domain.Entities
 		public URole Level { get; set; }
 		public DateTime RegisterDate { get; set; }
 	}
+
 }

@@ -21,7 +21,6 @@ namespace WebApplication1.Helpers
 			return DecryptStringAes(value, "BjXNmq5MKKaraLwxz9uaATvFwE4Rj679KguTRE8c2j56FnkuKJKfkGbZEeDGFDvsGYNHpUXFUUUuUHBR4UV3T2kumguhubg6Gpt7CyqGDbUPrMvPc67kX3yP");
 		}
 
-
 		/// <summary>
 		/// Encrypt the given string using AES.  The string can be decrypted using 
 		/// DecryptStringAES().  The sharedSecret parameters must match.

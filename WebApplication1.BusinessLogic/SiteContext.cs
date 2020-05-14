@@ -14,3 +14,4 @@ namespace WebApplication1.BusinessLogic
         public virtual DbSet<Post> Posts { get; set; }
     }
 }
+

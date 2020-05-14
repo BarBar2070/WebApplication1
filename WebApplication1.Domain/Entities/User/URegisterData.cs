@@ -9,3 +9,4 @@ namespace WebApplication1.Domain.Entities
         public DateTime RegisterDate { get; set; }
     }
 }
+

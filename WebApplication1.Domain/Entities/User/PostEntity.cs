@@ -13,3 +13,4 @@ namespace WebApplication1.Domain.Entities
 		public DateTime Date { get; set; }
 	}
 }
+

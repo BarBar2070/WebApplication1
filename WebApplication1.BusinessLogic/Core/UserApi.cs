@@ -11,6 +11,7 @@ using WebApplication1.Helpers;
 
 namespace WebApplication1.BusinessLogic
 {
+
     public class UserApi
     {
 		private readonly IMapper _mapper;

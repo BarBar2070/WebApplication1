@@ -16,7 +16,6 @@ namespace WebApplication1.Web.Controllers.Attributes
             var businessLogic = new BusinessLogic.InstanceBL();
             _sessionBL = businessLogic.GetSessionBL();
         }
-
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var apiCookie = HttpContext.Current.Request.Cookies["X-KEY"];

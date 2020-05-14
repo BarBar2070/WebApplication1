@@ -1,0 +1,26 @@
+﻿@using System.Web.Optimization
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AliMolldova</title>
+    <link href="~/Content/Layout.css" rel="stylesheet" />
+
+    @Styles.Render("~/bundles/bootstrap/css")
+   
+  
+</head>
+
+<body >
+
+    @Html.Partial("_Header")
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

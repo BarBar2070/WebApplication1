@@ -1,0 +1,59 @@
+﻿@using System.Web.Optimization
+@using WebApplication1.Web.Extensions
+
+@{
+    var user = System.Web.HttpContext.Current.GetMySessionObject();
+}
+ 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">AliMolldova</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <form class="form-inline my-1 my-lg-0 ">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Cautare" aria-label="Search">
+                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Căutare</button>
+                    </form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Home")">
+                                Acasa <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Top","Home")">Despre noi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Contacte","Home")">Contacte</a>
+                        </li>
+
+                        @if (user != null && user.Level.CompareTo(WebApplication1.Domain.Enums.URole.Administrator) == 0)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Admin" style="font-style:italic; ">Admin Panel</a>
+                            </li>
+                        }
+                        <!--   <li class="nav-item">
+                           <a class="nav-link" href="@Url.Action("SignIn","Authentification")">Logare</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link" href="@Url.Action("SignUp","Authentification")">Inregistrare</a>
+                       </li> -->
+                    </ul>
+
+                    @if (user == null)
+                    {
+                        <a class="btn btn-outline-light my-2 my-sm-0 mr-1" href="@Url.Action("SignIn","Authentification")">Logare</a>
+                        <a class="btn btn-outline-light my-2 my-sm-0" href="@Url.Action("SignUp","Authentification")">Inregistrare</a>
+                    }
+                    else
+                    {
+                        <a href="#" class="nav-link " style="color: white"> @user.Username</a>
+                        <a href="/Authentification/Logout" class="btn" style="color: white">Logout</a>
+                    }
+                </div>
+            </div>
+        </nav>
+  

@@ -25,7 +25,7 @@ namespace WebApplication1.Web.Controllers
             SessionStatus();
             return View(_blog.GetPostById(id));
         }
-        public ActionResult Top()
+        public ActionResult About()
         {
             SessionStatus();
             return View();

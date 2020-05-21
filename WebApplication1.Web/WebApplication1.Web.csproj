@@ -130,6 +130,7 @@
     <Content Include="Content\imgs\2.png" />
     <Content Include="Content\imgs\3.png" />
     <Content Include="Content\imgs\4.png" />
+    <Content Include="Content\imgs\about.png" />
     <Content Include="Content\imgs\fon.png" />
     <Content Include="Content\imgs\off-white1.png" />
     <Content Include="Content\imgs\off-white2.png" />
@@ -291,7 +292,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
     <Content Include="Views\Authentification\SignIn.cshtml" />
     <Content Include="Views\Authentification\SignUp.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.bootstrap.min.js.map" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Add.cshtml" />
@@ -300,6 +300,7 @@
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\Home\Contacte.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

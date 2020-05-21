@@ -10,6 +10,7 @@
                 <th scope="col" style="color:black;">#</th>
                 <th scope="col" style="color:black;">Title</th>
                 <th scope="col" style="color:black;">Image</th>
+                <th scope="col" style="color:black;">Price</th>
                 <th scope="col" style="        color: black;">Description</th>
                 <th scope="col" style="color:black;">Post Date</th>
                 <th scope="col" style="color:black;">Actions</th>
@@ -20,17 +21,18 @@
             {
                 foreach (var post in Model)
                 {
-                    <tr>
-                        <th scope="row" style="color:black;">@post.PostId</th>
-                        <td style="color:black;">@post.Title</td>
-                        <td style="color:black;"><a href="@post.ImageUrl" target="_blank" style="color:black;">Access</a></td>
-                        <td style="color:black;">@post.PostContent</td>
-                        <td style="color:black;">@post.Date</td>
-                        <td>
-                            <a href="/Admin/Edit/@post.PostId" type="button" class="btn btn-primary">Edit</a>
-                            <a href="/Admin/Delete/@post.PostId" type="button" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
+            <tr>
+                <th scope="row" style="color:black;">@post.PostId</th>
+                <td style="color:black;">@post.Title</td>
+                <td style="color:black;"><a href="@post.ImageUrl" target="_blank" style="color:black;">Access</a></td>
+                <td style="color:black;">@post.Price</td>
+                <td style="color:black;">@post.PostContent</td>
+                <td style="color:black;">@post.Date</td>
+                <td>
+                    <a href="/Admin/Edit/@post.PostId" type="button" class="btn btn-primary">Edit</a>
+                    <a href="/Admin/Delete/@post.PostId" type="button" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
 
                 }
             }

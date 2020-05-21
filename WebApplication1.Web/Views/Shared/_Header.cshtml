@@ -16,7 +16,18 @@
                         <input class="form-control mr-sm-2" type="search" placeholder="Cautare" aria-label="Search">
                         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Căutare</button>
                     </form>
+                    @if (user != null && user.Level.CompareTo(WebApplication1.Domain.Enums.URole.Administrator) == 0 )
+                    {
+                
+                    } else
+                    {
+                <a class="nav-link" href="tel:00-00-00" style="color:whitesmoke">
+                    Sunati: 45-22-22
+                </a>
+                    }
+
                     <ul class="navbar-nav ml-auto">
+
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Index","Home")">
                                 Acasa <span class="sr-only">(current)</span>
@@ -35,7 +46,7 @@
                                 <a class="nav-link" href="/Admin" style="font-style:italic; ">Admin Panel</a>
                             </li>
                         }
-                     
+
                     </ul>
 
                     @if (user == null)

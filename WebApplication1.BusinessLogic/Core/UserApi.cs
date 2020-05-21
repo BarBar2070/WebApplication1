@@ -86,7 +86,7 @@ namespace WebApplication1.BusinessLogic
             }
             if (result == null)
             {
-                return new UActionResp { Status = false, StatusMsg = "The username or password is incorrect" };
+                return new UActionResp { Status = false, StatusMsg = "Adresa sau parola este incorecta!" };
             }
             return new UActionResp { Status = true };
         }
@@ -105,7 +105,7 @@ namespace WebApplication1.BusinessLogic
 					return new UActionResp { Status = true };
 				}
 			}
-			return new UActionResp { Status = false, StatusMsg = "User already signed out" };
+			return new UActionResp { Status = false, StatusMsg = "Acest utilizator a fost inregistrat!" };
 		}
 
 		internal UActionResp UserRegisterAction(URegisterData data)
@@ -145,7 +145,7 @@ namespace WebApplication1.BusinessLogic
 					return new UActionResp { Status = true };
 				}
 			}
-			return new UActionResp { Status = false, StatusMsg = "This user already exists" };
+			return new UActionResp { Status = false, StatusMsg = "Utilizator deja existent!" };
 		}
 	}
 }

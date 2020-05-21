@@ -1,4 +1,10 @@
 ﻿@model IEnumerable<WebApplication1.Domain.Entities.PostEntity>
+@using System.Web.Optimization
+@using WebApplication1.Web.Extensions
+
+@{
+    var user = System.Web.HttpContext.Current.GetMySessionObject();
+}
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,6 +16,7 @@
         <div class="col-lg-3">
 
             <h1 class="my-4">Shopping online</h1>
+
             <div class="list-group">
                 <a href="#" class="list-group-item">BĂRBAȚI</a>
                 <a href="#" class="list-group-item">FEMEI</a>
@@ -52,26 +59,26 @@
 
             @if (Model.Count() > 0)
             {
-        <div class="row">
-            @foreach (var post in Model)
-            {
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="/Home/Detail/@post.PostId"><img class="card-img-top" src="@post.ImageUrl" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="/Home/Detail/@post.PostId">@post.Title</a>
-                            </h4>
-                            <h5>1 150 lei </h5>
-                            <p class="card-text">Pantaloni negrii slim pentru bărbații.</p>
+                <div class="row">
+                    @foreach (var post in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                    <a href="/Home/Detail/@post.PostId"><img class="card-img-top" src="@post.ImageUrl" alt=""></a>
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href="/Home/Detail/@post.PostId">@post.Title</a>
+                                        </h4>
+                                        <h5>@post.Price Lei </h5>
+                                        <p class="card-text">@post.PostContent</p>
+                                    </div>
+                            </div>
                         </div>
-                        <!--<div class="card-footer">
-                  <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                </div>-->
-                    </div>
-                </div> 
-            }
-        </div>
+                    }
+                </div>
             }
 
         </div>
+    </div>
+</div>

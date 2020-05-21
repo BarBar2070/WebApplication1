@@ -93,6 +93,7 @@ namespace WebApplication1.BusinessLogic
                         return false;
                     }
                     currentPost.Title = post.Title;
+                    currentPost.Price = post.Price;
                     currentPost.ImageUrl = post.ImageUrl;
                     currentPost.PostContent = post.PostContent;
                     db.SaveChanges();

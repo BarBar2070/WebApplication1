@@ -1,47 +1,83 @@
 ﻿@model WebApplication1.Domain.Entities.PostEntity
+@using WebApplication1.Web.Extensions
+
+@{
+    var user = System.Web.HttpContext.Current.GetMySessionObject();
+}
 @{
     ViewBag.Title = "Detail";
 }
+@if (user != null && user.Level.CompareTo(WebApplication1.Domain.Enums.URole.Administrator) == 0)
+{
+    <div class="container mt-3">
+        <h2 style="color:black;">Detail</h2>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
 
-<div class="container mt-3" >
-    <h2 style="color:white;">Detail</h2>
-    <div>
-        <dl class="dl-horizontal">
-            <dt >
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
 
-            <dd >
-                @Html.DisplayFor(model => model.Title)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PostContent)
+                </dt>
 
-            <dt >
-                @Html.DisplayNameFor(model => model.PostContent)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PostContent)
+                </dd>
 
-            <dd >
-                @Html.DisplayFor(model => model.PostContent)
-            </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </dt>
 
-            <dt >
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ImageUrl)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
 
-            <dd >
-                @Html.DisplayFor(model => model.ImageUrl)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
 
-            <dt >
-                @Html.DisplayNameFor(model => model.Date)
-            </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date)
+                </dt>
 
-            <dd >
-                @Html.DisplayFor(model => model.Date)
-            </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
 
-        </dl>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Back to List", "Index")
+        </p>
     </div>
-    <p >
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</div>
+}
+else
+{
+<div class="container">
+    <div class="col-lg-9">
+        
+        <div class="card mt-4">
+           
+                <img class="card-img-top img-fluid" src="~/@Html.DisplayFor(model => model.ImageUrl)">
+            <div class="card-body">
+                <h3 class="card-title"> @Html.DisplayFor(model => model.Title)</h3>
+                <h4>@Html.DisplayFor(model => model.Price) Lei</h4>
+                <p class="card-text">@Html.DisplayFor(model => model.PostContent)</p>
+
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Inapoi", "Index")
+        </p>
+  
+            </div>
+        </div>
+            }

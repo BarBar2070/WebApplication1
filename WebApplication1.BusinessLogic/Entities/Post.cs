@@ -25,5 +25,6 @@ namespace WebApplication1.BusinessLogic.Entities
 		[Required]
 		[DataType(DataType.Date)]
 		public DateTime Date { get; set; }
-	}
+        public string Price { get; internal set; }
+    }
 }
